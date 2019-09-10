@@ -1,9 +1,9 @@
 class Exercise {
-    constructor() {
-        this.userId = '';
-        this.description = '';
-        this.duration = 0;
-        this.date = new Date();
+    constructor(userid, desc, duration, date = new Date()) {
+        this.userId = userid;
+        this.description = desc;
+        this.duration = duration;
+        this.date = date;
     }
 }
 
