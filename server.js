@@ -3,6 +3,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 require('./models/exercise');
 require('./models/user');
+require('./views/index');
 var mongoose = require('mongoose'),
     express = require('express'),
     bodyParser = require('body-parser'),
@@ -12,7 +13,7 @@ var mongoose = require('mongoose'),
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
+// app.use('/views', express.static('public'));
 
 mongoose.Promise = global.Promise;
 

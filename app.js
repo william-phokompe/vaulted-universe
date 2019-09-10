@@ -3,7 +3,9 @@ var mongoose = require('mongoose'),
     id = require('shortid'),
     Exercise = require('./models/exercise');
 
-var users = function(request, response) {
+var drawFields = function(_, response) {
+    response.sendFile(`${__dirname}/views/index.htm`);
+}, users = function(request, response) {
     User.find({}, (error, result) => {
         if (error)
             response.send(error);
@@ -46,5 +48,6 @@ var users = function(request, response) {
 module.exports = {
     users,
     createUser,
-    createExercise
+    createExercise,
+    drawFields
 };
