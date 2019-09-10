@@ -7,4 +7,7 @@ module.exports = function(app) {
 
     app.route('/createUser')
         .post(logic.createUser);
+
+    app.route('/createExercise')
+        .post(logic.createExercise);
 }
