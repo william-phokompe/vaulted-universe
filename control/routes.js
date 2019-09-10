@@ -11,6 +11,6 @@ module.exports = function(app) {
     app.route('/api/exercise/new-user')
         .post(logic.createUser);
 
-    app.route('/createExercise')
+    app.route('/api/exercise/add')
         .post(logic.createExercise);
 }
