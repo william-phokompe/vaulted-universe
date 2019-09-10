@@ -8,7 +8,7 @@ module.exports = function(app) {
     app.route('/listAllUsers')
         .get(logic.users);
 
-    app.route('/createUser')
+    app.route('/api/exercise/new-user')
         .post(logic.createUser);
 
     app.route('/createExercise')
