@@ -13,7 +13,7 @@ var UserSchema = new Schema({
         required: true
     },
     exercise: {
-        type: [Exercise],
+        type: [Object],
         required: false
     }
 });
