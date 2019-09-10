@@ -7,8 +7,10 @@ var drawFields = function(_, response) {
     response.sendFile(`${__dirname}/views/index.htm`);
 }, users = function(request, response) {
     User.find({}, (error, result) => {
-        if (error)
+        if (error) {
             response.send(error);
+            return ;
+        }
         response.json(result); 
     });
 }, createUser = function(request, response) {
@@ -19,8 +21,10 @@ var drawFields = function(_, response) {
     });
 
     new_user.save((error, result) => {
-        if (error)
+        if (error) {
             response.send(error);
+            return ;
+        }
         response.json(result);
     });
 }, createExercise = function(request, response) {
@@ -32,8 +36,10 @@ var drawFields = function(_, response) {
     );
 
     User.findOne({ userId: newExercise.userId }, (error, data) => {
-        if (error)
+        if (error) {
             response.send(error);
+            return ;
+        }
         var document = new User(data);
         document.exercise.push(newExercise);
         document.save((err, res) => {
